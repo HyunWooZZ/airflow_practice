@@ -31,5 +31,10 @@ with DAG('parallel_dag',
         bash_command='sleep 3'
     )
 
+    task5 = BashOperator(
+        task_id='task_5',
+        bash_command='sleep 3'
+    )
 
-    task1 >> [task2, task3] >> task4
+
+    task1 >> [task2, task3, task4] >> task5
